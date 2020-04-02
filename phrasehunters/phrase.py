@@ -9,6 +9,8 @@ class Phrase:
         for letter in letter_list:
             self.character_list.append(Character(letter))
 
+    # This method checks the letter to each character object
+    # if one is guessed it returns True
     def check_guess(self, letter):
         one_guessed = False
         is_guessed = False
@@ -20,12 +22,15 @@ class Phrase:
                 continue
         return is_guessed
 
+    # This method returns a list showing the appropriate character
+    # from the phrase
     def return_letters(self):
         return_list = []
         for letters in self.character_list:
             return_list.append(letters.show_letter())
         return return_list
 
+    # This method returns whether or not the entire word has been uncovered
     def guessed_entire_word(self):
         whole_word = False
         a_list = []

@@ -11,15 +11,18 @@ class Game:
         self.current_phrase = self.phrases[phrase_number]
         self.phrase_inst = Phrase(self.current_phrase)
 
+    # Method for showing the letters
     def show_letters(self):
         letters_list = self.phrase_inst.return_letters()
         letters_string = " ".join(letters_list)
         print(letters_string)
 
+    # Start game
     def start_game(self):
         game_going = True
         lives = 5
 
+        # User welcome
         print("--------------------------")
         print("Welcome to Phrase Hunter!!")
         print("--------------------------")
@@ -29,6 +32,7 @@ class Game:
         print("Here is your word:")
         print("\n")
         self.show_letters()
+        # Loop for user interaction
         while game_going:
             try:
                 letter = input("Please enter a letter: ")
