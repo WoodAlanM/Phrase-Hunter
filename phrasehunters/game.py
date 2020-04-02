@@ -42,12 +42,14 @@ class Game:
                 print("Please only enter a letter.")
                 continue
             else:
+                print("\n")
                 print("Thanks, checking letter...\n")
             guess = self.phrase_inst.check_guess(letter)
             if guess:
                 if self.phrase_inst.guessed_entire_word():
                     print("\n")
                     print("You did it!!  You had {} lives left.".format(str(lives)))
+                    print("Thanks for playing!!")
                     break
                 else:
                     print("Good job! You have {} lives left.".format(str(lives)))

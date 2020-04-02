@@ -28,9 +28,8 @@ class Phrase:
 
     def guessed_entire_word(self):
         whole_word = False
-        for letters in self.character_list:
-            if letters.show_letter() == "_":
-                break
-            else:
-                whole_word = True
-        return whole_word
+        a_list = []
+        for letter in self.character_list:
+            a_list.append(letter.show_letter())
+        return "_" not in a_list
+

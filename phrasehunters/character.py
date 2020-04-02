@@ -17,9 +17,8 @@ class Character:
             return False
 
     def show_letter(self):
-        value = "_"
         if self.was_guessed:
             return self.char
         else:
-            return value
+            return "_"
 
