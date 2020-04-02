@@ -5,6 +5,7 @@ from phrasehunters.phrase import Phrase
 
 class Game:
     def __init__(self, phrases):
+        self.guessed_list = []
         self.phrases = phrases
         self.current_phrase = []
         phrase_number = random.randint(0, len(self.phrases) - 1)
@@ -16,6 +17,13 @@ class Game:
         letters_list = self.phrase_inst.return_letters()
         letters_string = " ".join(letters_list)
         print(letters_string)
+
+    def guess(self, letter):
+        if str(letter) in self.guessed_list:
+            return True
+        else:
+            self.guessed_list.append(str(letter))
+            return False
 
     # Start game
     def start_game(self):
@@ -42,11 +50,13 @@ class Game:
             if len(letter) != 1:
                 print("Please enter only one letter.")
                 continue
-            elif isinstance(letter, int):
+            elif not letter.isalpha():
                 print("Please only enter a letter.")
                 continue
+            elif self.guess(letter):
+                print("Please choose a letter you have not chosen already.")
+                continue
             else:
-                print("\n")
                 print("Thanks, checking letter...\n")
             guess = self.phrase_inst.check_guess(letter)
             if guess:
