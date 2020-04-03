@@ -9,16 +9,9 @@ from phrasehunters.game import Game
 ## Start your game by calling the instance method that starts the game loop
 
 phrase_list = [
-    "Apple",
-    "Frozen",
-    "Cupboard",
-    "Magnet",
-    "Clap",
-    "Kitchen",
-    "Bathroom",
-    "Dogs",
-    "Leopard",
-    "Game"
+    "Time is money",
+    "Show me the money",
+    "Hello world"
 ]
 
 

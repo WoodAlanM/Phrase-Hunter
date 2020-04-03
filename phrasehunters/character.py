@@ -22,6 +22,8 @@ class Character:
     def show_letter(self):
         if self.was_guessed:
             return self.char
+        elif self.char == " ":
+            return " "
         else:
             return "_"
 
